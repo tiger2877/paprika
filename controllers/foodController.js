@@ -7,13 +7,13 @@ var express = require("express");
 var router = express.Router();
 
 // Requiring our models
-var burger = require("../models/food.js");
+var food = require("../models/food.js");
 
 // Create all our routes and set up logic within those routes where required
 router.get("/", function(req, res) {
-  burger.all(function(data) {
+  food.all(function(data) {
     var hbsObject = {
-      burgers: data
+      foods: data
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
@@ -21,7 +21,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/foods", function(req, res) {
-  burger.create(["food_name", "checkout"], 
+  food.create(["food_name", "checkout"], 
   [
     req.body.food_name, req.body.checkout
   ], function(result) {
