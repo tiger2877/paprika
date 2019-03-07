@@ -8,5 +8,6 @@ CREATE TABLE foods
 	id int NOT NULL AUTO_INCREMENT,
 	food_name varchar(255) NOT NULL,
 	checkout BOOLEAN NOT NULL DEFAULT false,
+	calories DECIMAL(10,2) NULL,
 	PRIMARY KEY (id)
 );
