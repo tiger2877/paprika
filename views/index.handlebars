@@ -37,34 +37,20 @@
 		</div>
     
     <!--Row 2: Select a Food-->
-    <div class="row">
-			<div class="col-md-8 offset-md-2">
-				<div class="author-container">
-
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>Select a Food</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-                  <ul id="food-list" class="list-group">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <h2>Select a Food</h2>
+          <hr>
+              <ul id="food-list" class="list-group">
                     {{#each food}}
                     <li data-id="{{this.id}}" class="list-group-item">
                       <a href="food/{{this.id}}">{{this.text}}</a>
                       <button class="btn btn-danger float-right delete">ｘ</button>
                     </li>
                     {{/each}}
-                  </ul>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-
-	</div>
+              </ul>
+        </div>
+      </div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
