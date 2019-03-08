@@ -41,10 +41,10 @@
         <div class="col-sm-8 col-sm-offset-2">
           <h2>Select a Food</h2>
           <hr>
-              <ul id="food-list" class="list-group">
+              <ul id="recent-list" class="list-group">
                     {{#each food}}
                     <li data-id="{{this.id}}" class="list-group-item">
-                      <a href="food/{{this.id}}">{{this.text}}</a>
+                      <a href="recent/{{this.id}}">{{this.text}}</a>
                       <button class="btn btn-danger float-right delete">ｘ</button>
                     </li>
                     {{/each}}
