@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS calorietracker_db;
+CREATE DATABASE calorietracker_db;
 
 DROP DATABASE IF EXISTS testdb;
 CREATE DATABASE testdb;

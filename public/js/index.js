@@ -1,8 +1,5 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $foodName = $("#example-text");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -12,13 +9,13 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "api/addRecent",
       data: JSON.stringify(example)
     });
   },
   getExamples: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/recent",
       type: "GET"
     });
   },
@@ -64,9 +61,8 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var searchFoodName = {
+    text: $foodName.val().trim()
   };
 
   if (!(example.text && example.description)) {
@@ -74,12 +70,11 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.saveExample(searchFoodName).then(function() {
+    //refreshExamples();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $foodName.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
