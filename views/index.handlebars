@@ -1,19 +1,22 @@
 <div id="home">
-  <div class="container">
-		<div class="row mt-4">
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-light" href="/blog">Go to Blog</a>
-      </div>
-			<div class="col-md-2 col-sm-2">
-        <a class="btn btn-light" href="/cms">New Post</a>
-      </div>
-    </div>
+        <div class="container">
+          <div class="jumbotron"> 
+          <h1>Calories Counter</h1>
+            <i class='fas fa-bread-slice' style='font-size:36px'></i>
+            <i class='fas fa-bacon' style='font-size:36px'></i>
+            <i class='fas fa-egg' style='font-size:36px'></i>  
+            <i class='fas fa-cheese' style='font-size:36px'></i>
+            <i class='fas fa-hamburger' style='font-size:36px'></i>
+            <i class='fas fa-pizza-slice' style='font-size:36px'></i>
+            <i class='fas fa-pepper-hot' style='font-size:36px'></i>
+        </div>
 
+  <section class = "main-section">      
     <!--Row 1: Search Food-->
 		<div class="row">
-			<div class="col-md-8 offset-md-2">
+			<div class="col-md-12">
 				<div class="food-container">
-					<h1>Food Calculator</h1>
+
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -22,7 +25,7 @@
 						</thead>
 						<tbody>
 							<tr id="form-row">
-								<form id="author-form">
+								<form id="food-form">
 									<td colspan="4">
 										<input placeholder="Enter your food" id="food-name" type="text" />
 									</td>
@@ -35,23 +38,37 @@
 				</div>
 			</div>
 		</div>
-    
+         
     <!--Row 2: Select a Food-->
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <h2>Select a Food</h2>
-          <hr>
-              <ul id="recent-list" class="list-group">
-                    {{#each recent}}
-                    <li data-id="{{this.id}}" class="list-group-item">
-                      <a href="recent/{{this.id}}">{{this.text}}</a>
-                      <button class="btn btn-danger float-right delete">ｘ</button>
-                    </li>
-                    {{/each}}
-              </ul>
-        </div>
-      </div>
-</div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th>Select Food</th>
+                    </tr>
+                </thead>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+                <tbody>
+                <hr>
+                    <ul id="recent-list" class="list-group">
+                          {{#each food}}
+                          <li data-id="{{this.id}}" class="list-group-item">
+                            <a href="recent/{{this.id}}">{{this.text}}</a>
+                           
+                          </li>
+                          {{/each}}
+                    </ul>
+                  </tr>
+                </tbody>
+            </table>   
+
+        </div>
+    </div>
+
+  </section>   
+
+</div>
+      
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="/js/index.js"></script>
