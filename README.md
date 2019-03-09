@@ -31,7 +31,7 @@ From this user input data, users will be able to do the followings:
 - - -
 
 ### APIs to be Used:
-    * Food Database API Documentation: [developer.edamam.com](https://developer.edamam.com/food-database-api-docs)
+Food Database API Documentation: [developer.edamam.com](https://developer.edamam.com/food-database-api-docs)
     
  - - -  
  ### New technology:
