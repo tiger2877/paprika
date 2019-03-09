@@ -27,7 +27,6 @@ From this user input data, users will be able to do the followings:
 - - -
 
 ### Sketch of Final Product: 
-![Calories Counter Project]()
 
 - - -
 
