@@ -1,4 +1,28 @@
-<div id="home">
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Food Calculator</title>
+    <i class='fas fa-bread-slice' style='font-size:36px'></i>
+    <i class='fas fa-bacon' style='font-size:36px'></i>
+    <i class='fas fa-egg' style='font-size:36px'></i>  
+		<i class='fas fa-cheese' style='font-size:36px'></i>
+    <i class='fas fa-hamburger' style='font-size:36px'></i>
+    <i class='fas fa-pizza-slice' style='font-size:36px'></i>
+    <i class='fas fa-pepper-hot' style='font-size:36px'></i>
+</div>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div id="home">
         <div class="container">
           <div class="jumbotron"> 
           <h1>Calories Counter</h1>
@@ -10,13 +34,10 @@
             <i class='fas fa-pizza-slice' style='font-size:36px'></i>
             <i class='fas fa-pepper-hot' style='font-size:36px'></i>
         </div>
-
-  <section class = "main-section">      
-    <!--Row 1: Search Food-->
-		<div class="row">
-			<div class="col-md-12">
+                <!--Row 1: Search Food-->
+                <section class = "main-section">
 				<div class="food-container">
-
+			
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -25,7 +46,7 @@
 						</thead>
 						<tbody>
 							<tr id="form-row">
-								<form id="food-form">
+								<form id="author-form">
 									<td colspan="4">
 										<input placeholder="Enter your food" id="food-name" type="text" />
 									</td>
@@ -33,23 +54,11 @@
 									</td>
 								</form>
 							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
+			
          
-    <!--Row 2: Select a Food-->
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                      <th>Select Food</th>
-                    </tr>
-                </thead>
+          <!--Row 2: Select a Food-->
 
-                <tbody>
+                <h2>Select a Food</h2>
                 <hr>
                     <ul id="recent-list" class="list-group">
                           {{#each food}}
@@ -59,16 +68,24 @@
                           </li>
                           {{/each}}
                     </ul>
-                  </tr>
-                </tbody>
-            </table>   
-
-        </div>
-    </div>
-
-  </section>   
-
+   
+      </section>
+      
+    </tbody>
+</table>
 </div>
+</div>
+</div>
+          <!--sidebar-->
+      <section class="sidebar">
+       
+        
+      </section>
       
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="/js/index.js"></script>
+      
+</div>
+</body>
+
+</html>
