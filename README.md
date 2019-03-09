@@ -1,4 +1,5 @@
-# Group Paprika: Project Title: Calories Counter
+# Group Paprika
+* Project Title: Calories Counter
 
 ### Team Members:
 - Jessen Dasilva: [Jessen's github](https://github.com/jessendasilva1)
