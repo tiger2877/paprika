@@ -75,7 +75,7 @@ module.exports = function(app) {
       db.SearchView.destroy({
         where: {}
       }).then(function() {
-        db.SearchView.bulkCreate(foodArray).then(function(){
+        db.SearchView.bulkCreate(foodArray).then(function() {
           res.send("testing");
         });
       });
