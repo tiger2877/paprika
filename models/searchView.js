@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Recent = sequelize.define("Recent", {
+  var SearchView = sequelize.define("SearchView", {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -40,5 +40,5 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-  return Recent;
+  return SearchView;
 };

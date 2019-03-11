@@ -1,9 +1,6 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
-
+var $foodName = $("#food-name");
+var $submitButton = $("#submitButton");
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -16,9 +13,9 @@ var API = {
       data: JSON.stringify(example)
     });
   },
-  getExamples: function() {
+  getSearchView: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/searchView",
       type: "GET"
     });
   },
@@ -27,73 +24,66 @@ var API = {
       url: "api/examples/" + id,
       type: "DELETE"
     });
-  }
-};
-
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
+  },
+  searchFood: function(name) {
+    return $.get({
+      url:
+        "https://api.edamam.com/api/food-database/parser?ingr=" +
+        name +
+        "&app_id=bc5159a0&app_key=cc574421cb216827121d637a51284839"
     });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
+  }
 };
 
 // handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
+  //only executes on invalid searches
+  $("#test").empty();
+  var name = $foodName.val();
+  console.log(name);
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
-
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (name === "") {
+    alert("You must enter a Food to search for!");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.searchFood(name).then(function(data) {
+    if (data.hints.length <= 0) {
+      alert("Couldnt find any foods with the name: " + name);
+      return;
+    } else {
+      console.log("called food api successfully. "); //+ JSON.stringify(data));
+      //update frontend with results.
+      renderSearch(data.hints);
+    }
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $foodName.val("");
+};
+
+var renderSearch = function(searchResults) {
+  //console.log("renderSearch: \n" + JSON.stringify(searchResults));
+  $.post({
+    url: "/api/updateResults",
+    data: { test: searchResults }
+  }).then(function() {
+    //alert("loading results...");
+    location.reload();
+  });
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
+/*
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
+  API.deleteExample(idToDelete).then(function() {});
 };
-
+*/
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$submitButton.on("click", handleFormSubmit);
+//$exampleList.on("click", ".delete", handleDeleteBtnClick);

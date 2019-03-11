@@ -29,7 +29,7 @@
 									<td colspan="4">
 										<input placeholder="Enter your food" id="food-name" type="text" />
 									</td>
-									<td><button type="submit" class="btn btn-success">Search Food</button>
+									<td><button id="submitButton" type="submit" class="btn btn-success">Search Food</button>
 									</td>
 								</form>
 							</tr>
@@ -51,13 +51,9 @@
 
                 <tbody>
                 <hr>
-                    <ul id="recent-list" class="list-group">
-                          {{#each food}}
-                          <li data-id="{{this.id}}" class="list-group-item">
-                            <a href="recent/{{this.id}}">{{this.text}}</a>
-                          </li>
-                          {{/each}}
-                    </ul>
+                    <div id="test">
+                      {{> recent}}
+                    </div>  
                   </tr>
                 </tbody>
             </table>   
