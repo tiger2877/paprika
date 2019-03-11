@@ -9,7 +9,7 @@
   "test": {
     "username": "root",
     "password": null,
-    "database": "testdb",
+    "database": "burgers_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
