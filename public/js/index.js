@@ -50,6 +50,7 @@ var handleFormSubmit = function(event) {
 
   API.searchFood(name).then(function(data) {
     if (data.hints.length <= 0) {
+      // change this to be displayed on the page instead of an alert
       alert("Couldnt find any foods with the name: " + name);
       return;
     } else {
