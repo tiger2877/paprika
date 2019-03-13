@@ -1,4 +1,4 @@
-# Group Paprika ![concert-this](https://tse3.mm.bing.net/th?id=OIP.05wWJaolx2HaQp6woQTGMgHaKA&pid=Api&P=0&w=100&h=100)
+# Group Paprika ![paprika](https://tse3.mm.bing.net/th?id=OIP.05wWJaolx2HaQp6woQTGMgHaKA&pid=Api&P=0&w=80&h=80)
 * Project Title: Calories Counter
 
 ### Team Members:
