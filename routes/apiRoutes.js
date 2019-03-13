@@ -80,6 +80,7 @@ module.exports = function(app) {
       }).then(function() {
         db.SearchView.bulkCreate(foodArray).then(function() {
           res.send("testing");
+          // eslint-disable-next-line prettier/prettier
           db.Recent.create(foodArray[0]).then(function() {//Enters the first item into the recent searches table
             //console.log("Achieved.");
           });
