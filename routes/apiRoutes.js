@@ -28,39 +28,45 @@ module.exports = function(app) {
           sugar: 0,
           fat: 0
         };
-        var foodNutrients = foodName[0].food.nutrients;
-        //console.log("Original: " + JSON.stringify(foodName[0]));
         foodObject.foodID = foodName[0].food.foodId;
         foodObject.name = foodName[0].food.label;
-        //checks is there is calorie key value pair
-        if (foodNutrients.ENERC_KCAL) {
-          foodObject.calories = foodNutrients.ENERC_KCAL;
-        } else {
+        var foodNutrients = foodName[0].food.nutrients;
+        if (foodNutrients === undefined) {
           foodObject.calories = 0;
-        }
-        //checks is there is protien key value pair
-        if (foodNutrients.PROCNT) {
-          foodObject.protien = foodNutrients.PROCNT;
-        } else {
           foodObject.protien = 0;
-        }
-        //checks is there is sugar key value pair
-        if (foodNutrients.SUGAR) {
-          foodObject.sugar = foodNutrients.SUGAR;
-        } else {
           foodObject.sugar = 0;
-        }
-        //checks is there is carbs key value pair
-        if (foodNutrients.CHOCDF) {
-          foodObject.carbs = foodNutrients.CHOCDF;
-        } else {
           foodObject.carbs = 0;
-        }
-        //checks is there is fat key value pair
-        if (foodNutrients.FAT) {
-          foodObject.fat = foodNutrients.FAT;
-        } else {
           foodObject.fat = 0;
+        } else {
+          if (foodNutrients.ENERC_KCAL) {
+            foodObject.calories = foodNutrients.ENERC_KCAL;
+          } else {
+            foodObject.calories = 0;
+          }
+          //checks is there is protien key value pair
+          if (foodNutrients.PROCNT) {
+            foodObject.protien = foodNutrients.PROCNT;
+          } else {
+            foodObject.protien = 0;
+          }
+          //checks is there is sugar key value pair
+          if (foodNutrients.SUGAR) {
+            foodObject.sugar = foodNutrients.SUGAR;
+          } else {
+            foodObject.sugar = 0;
+          }
+          //checks is there is carbs key value pair
+          if (foodNutrients.CHOCDF) {
+            foodObject.carbs = foodNutrients.CHOCDF;
+          } else {
+            foodObject.carbs = 0;
+          }
+          //checks is there is fat key value pair
+          if (foodNutrients.FAT) {
+            foodObject.fat = foodNutrients.FAT;
+          } else {
+            foodObject.fat = 0;
+          }
         }
         //console.log("After: " + JSON.stringify(foodObject));
         foodArray.push(foodObject);
@@ -77,15 +83,19 @@ module.exports = function(app) {
       // delete previous results in DB
       db.SearchView.destroy({
         where: {}
-      }).then(function() {
-        db.SearchView.bulkCreate(foodArray).then(function() {
-          res.send("testing");
-          // eslint-disable-next-line prettier/prettier
-          db.Recent.create(foodArray[0]).then(function() {//Enters the first item into the recent searches table
-            //console.log("Achieved.");
+      })
+        .then(function() {
+          db.SearchView.bulkCreate(foodArray).then(function() {
+            res.send("testing");
+            // eslint-disable-next-line prettier/prettier
+            db.Recent.create(foodArray[0]).then(function() {//Enters the first item into the recent searches table
+              //console.log("Achieved.");
+            });
           });
+        })
+        .catch(function(err) {
+          console.log("promise error: " + err);
         });
-      });
     });
   });
 
