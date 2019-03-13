@@ -1,4 +1,4 @@
-# Group Paprika ![paprika](https://image.freepik.com/free-vector/red-green-and-yellow-peppers-graphic-illustration_53876-8473.jpg)
+# Group Paprika ![concert-this](https://tse3.mm.bing.net/th?id=OIP.05wWJaolx2HaQp6woQTGMgHaKA&pid=Api&P=0&w=300&h=300)
 * Project Title: Calories Counter
 
 ### Team Members:
