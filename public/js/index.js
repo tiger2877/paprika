@@ -71,9 +71,17 @@ var renderSearch = function(searchResults) {
   }).then(function() {
     //alert("loading results...");
     location.reload();
+    renderRecent();
   });
 };
 
+var renderRecent = function() {
+  $.post({
+    url: "/api/addRecent"
+  }).then(function() {
+    location.reload();
+  });
+};
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
 /*

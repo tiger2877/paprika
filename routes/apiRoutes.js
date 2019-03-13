@@ -4,10 +4,10 @@ module.exports = function(app) {
   // Get all recent searches
   app.get("/", function(req, res) {
     db.SearchView.findAll({}).then(function(foodResults) {
-      db.Recent.findAll({}).then(function(recentView) {
+      db.Recent.findAll({}).then(function(recentResults) {
         res.render("index", {
           foodResults: foodResults,
-          recent: recentView
+          recent: recentResults
         });
       });
     });
@@ -78,6 +78,7 @@ module.exports = function(app) {
       }
     });
     //once our food Object is populated, send it to the handlebars index file to create our search results list
+<<<<<<< HEAD
     promise
       .then(function(foodArray) {
         console.log("promise");
@@ -88,6 +89,19 @@ module.exports = function(app) {
           db.SearchView.bulkCreate(foodArray).then(function() {
             db.Recent.create(foodArray[0]);
             res.send("testing");
+=======
+    promise.then(function(foodArray) {
+      console.log("promise");
+      // delete previous results in DB
+      db.SearchView.destroy({
+        where: {}
+      }).then(function() {
+        db.SearchView.bulkCreate(foodArray).then(function() {
+          res.send("testing");
+          // eslint-disable-next-line prettier/prettier
+          db.Recent.create(foodArray[0]).then(function() {//Enters the first item into the recent searches table
+            //console.log("Achieved.");
+>>>>>>> origin
           });
         });
       })
@@ -98,8 +112,12 @@ module.exports = function(app) {
 
   // Create a new Recent Search
   app.post("/api/addRecent", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+    db.Recent.findAll({}).then(function(foodResults) {
+      res.render("recent", {
+        recent: foodResults
+      });
+      //console.log("---------------------------------------------");
+      //console.log(foodResults);
     });
   });
 
