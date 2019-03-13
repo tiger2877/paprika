@@ -1,0 +1,29 @@
+{{#each recent}}
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Nutrition Information:</h5>
+          <!--Display Name, Calories, Protien, Sugar, Fat, Carbs-->
+          <p>
+            <strong>Name</strong>: {{name}}</p>
+          <p>
+          <p>
+            <strong>Calories</strong>: {{calories}}</p>
+          <p>
+            <strong>Protein:</strong> {{protien}}</p>
+          <p>
+            <strong>Sugar</strong> {{sugar}}</p>
+          <p>
+            <strong>Fat</strong> {{fat}}</p>
+          <p>
+            <strong>Carbs</strong> {{carbs}}</p>
+
+            <a href="/">← Back To Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/each}}

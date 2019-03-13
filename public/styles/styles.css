@@ -1,3 +1,70 @@
+* {
+	text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 20px;
+  margin: 10px;
+  background: lightgrey;
+}
+
 .list-group-item {
   line-height: 2.5;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.add-burger {
+  margin-bottom: 5px;
+}
+
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+body{
+  background: url("../images/background.jpg");
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 2;
+	color: #333;
+}
+
+.jumbotron {
+	background-color: #f5f5f5;
+}
+
+form {
+  width:500px;
+  margin:50px auto;
+}
+.search {
+  padding:8px 15px;
+  background:rgba(50, 50, 50, 0.2);
+  border:0px solid #dbdbdb;
+}
+.button {
+  position:relative;
+  padding:6px 15px;
+  left:-8px;
+  border:2px solid #207cca;
+  background-color:#207cca;
+  color:#fafafa;
+}
+.button:hover  {
+  background-color:#fafafa;
+  color:#207cca;
 }

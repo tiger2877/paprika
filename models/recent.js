@@ -6,32 +6,36 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       primaryKey: true
     },
-    itemName: {
+    foodID: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },
     // eslint-disable-next-line prettier/prettier
-    kCal: {// Calories
+    calories: {// Calories
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false
     },
     // eslint-disable-next-line prettier/prettier
-    CHOCDF: {// Carbs
+    carbs: {// Carbs
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false
     },
     // eslint-disable-next-line prettier/prettier
-    PROCNT: {// Protien Content
+    protien: {// Protien Content
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false
     },
     // eslint-disable-next-line prettier/prettier
-    FAT: {// Fat Content
+    fat: {// Fat Content
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false
     },
     // eslint-disable-next-line prettier/prettier
-    SUGAR: {// Sugars
+    sugar: {// Sugars
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false
     }
