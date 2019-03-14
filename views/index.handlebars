@@ -1,77 +1,56 @@
-<div id="home">
-        <div class="container">
-          <div class="jumbotron"> 
-          <h1>Calories Counter</h1>
-            <i class='fas fa-bread-slice' style='font-size:36px'></i>
-            <i class='fas fa-bacon' style='font-size:36px'></i>
-            <i class='fas fa-egg' style='font-size:36px'></i>  
-            <i class='fas fa-cheese' style='font-size:36px'></i>
-            <i class='fas fa-hamburger' style='font-size:36px'></i>
-            <i class='fas fa-pizza-slice' style='font-size:36px'></i>
-            <i class='fas fa-pepper-hot' style='font-size:36px'></i>
-        </div>
-
-  <section class = "main-section">      
-    <!--Row 1: Search Food-->
-		<div class="row">
+  <div class="container">	
+    <div class="jumbotron"> 
+      <h1><i class="fas fa-heartbeat" style="font-size:48px;color:red" aria-hidden="true"></i> Calories Counter</h1>
+      <hr>
+      <h2>Search any food you want here</h2>
+      <h2>Then find the calories, carbs, protein, fat, and sugar content of your desirable food.</h2>
+    </div>
+    
+<div class="wrapper">
+    <div class="row">
 			<div class="col-md-12">
-				<div class="food-container">
-
-					<table class="table table-striped">
+          <!--Search Food-->
+          <table class="table table-striped">
 						<thead>
 							<tr>
-								<th>Search Food</th>
 							</tr>
 						</thead>
-						<tbody>
+            <tbody>
 							<tr id="form-row">
-								<form id="food-form">
-									<td colspan="4">
-										<input placeholder="Enter your food" id="food-name" type="text" />
-									</td>
-									<td><button id="submitButton" type="submit" class="btn btn-success">Search Food</button>
-									</td>
-								</form>
-							</tr>
-						</tbody>
-            <tr>
-               <td>
-                   <td><div>
-                     {{> foodResults}}
-                   </td></div>
-               </td>
-             </tr>
-					</table>
+                <form id="food-form" class="form-inline my-2 my-lg-0">
+                  <td colspan="4">
+                    <input class="form-control form-control-sm" placeholder="Enter your food" id="food-name" type="text" />
+                  </td>  
+                  <td><button id="searchButton" class="btn btn-outline-success my-2 my-sm-0" >Search</button></td>
+                </form>
+              </tr>
+					  </tbody>
+          </table>
+    </div>
+  </div> 
 
-				</div>
-			</div>
-		</div>
-         
-    <!--Row 2: Select a Food-->
+  <section class = "main-section">      
+
+    <!--Show the food results here-->
+    <div class="row">
+			<div class="col-md-12">
+        <h5>Select Food</h5>
+          {{> foodResults}}
+      </div>
+    </div>   
+    <br>
+    <!--Display recent results here-->
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                      <th>Select Food</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <hr>
-                  <tr>
-                    <td><div id="test">
-                      {{> recent}}
-                    </td></div>  
-                  </tr>
-                </tbody>
-            </table>
-
+            <h5>Recent searches:</h5>
+                <div id="test">
+                    {{> recent}}
+                </div>  
         </div>
     </div>
 
   </section>   
-
 </div>
-      
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="/js/index.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/index.js"></script>

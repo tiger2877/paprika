@@ -35,7 +35,7 @@ var API = {
   }
 };
 
-// handleFormSubmit is called whenever we submit a new example
+// handleFormSubmit is called whenever we submit a new food item
 var handleFormSubmit = function(event) {
   event.preventDefault();
   //only executes on invalid searches
@@ -75,6 +75,7 @@ var renderSearch = function(searchResults) {
   });
 };
 
+//show the most recent search results
 var renderRecent = function() {
   $.post({
     url: "/api/addRecent"
@@ -82,6 +83,7 @@ var renderRecent = function() {
     location.reload();
   });
 };
+
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
 /*
