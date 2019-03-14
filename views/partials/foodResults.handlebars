@@ -6,7 +6,7 @@
             <p>
               <strong>Name</strong>: {{name}}</p>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <button id="viewModal" data-foodID="{{foodID}}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
               View
             </button>
 
@@ -23,17 +23,18 @@
                     <!--Display Name, Calories, Protien, Sugar, Fat, Carbs-->
                   <div class="modal-body">
                       <p>
-                        <strong>Calories</strong>: {{calories}}</p>
+                        <strong id="calories{{foodID}}" data-calories="{{calories}}" class="{{foodID}}">Calories:</strong></p>
                       <p>
-                        <strong>Protein:</strong> {{protien}}</p>
+                        <strong id="protien{{foodID}}" data-protien="{{protien}}" class="{{foodID}}">Protein:</strong></p>
                       <p>
-                        <strong>Sugar</strong> {{sugar}}</p>
+                        <strong id="sugar{{foodID}}" data-sugar="{{sugar}}" class="{{foodID}}">Sugar:</strong></p>
                       <p>
-                        <strong>Fat</strong> {{fat}}</p>
+                        <strong id="fat{{foodID}}" data-fat="{{fat}}" class="{{foodID}}">Fat:</strong></p>
                       <p>
-                        <strong>Carbs</strong> {{carbs}}</p>
+                        <strong id="carbs{{foodID}}" data-carbs="{{carbs}}" class="{{foodID}}">Carbs:</strong></p>
                   </div>
                   <div class="modal-footer">
+                    <button id="addToCart" type="button" class="btn btn-primary" data-dismiss="modal">Add To Cart</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             
                   </div>
