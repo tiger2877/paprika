@@ -22,7 +22,6 @@
 }
 
 body{
-  background-color: gold;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 14px;
 	line-height: 2;
@@ -34,7 +33,7 @@ body{
   width: 100%;
   padding: 30px;
   margin: 0 0 40px;
-  background: #fff;
+  background: #f5f5f5;
   border: 1px solid #ddd;
 }
 
