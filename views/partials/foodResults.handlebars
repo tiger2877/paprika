@@ -1,29 +1,50 @@
 {{#each foodResults}}
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Nutrition Information:</h5>
-          <!--Display Name, Calories, Protien, Sugar, Fat, Carbs-->
-          <p>
-            <strong>Name</strong>: {{name}}</p>
-          <p>
-          <p>
-            <strong>Calories</strong>: {{calories}}</p>
-          <p>
-            <strong>Protein:</strong> {{protien}}</p>
-          <p>
-            <strong>Sugar</strong> {{sugar}}</p>
-          <p>
-            <strong>Fat</strong> {{fat}}</p>
-          <p>
-            <strong>Carbs</strong> {{carbs}}</p>
 
-            <a href="/">← Back To Home</a>
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+            <p>
+              <strong>Name</strong>: {{name}}</p>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+              View
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Nutrition Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                    <!--Display Name, Calories, Protien, Sugar, Fat, Carbs-->
+                  <div class="modal-body">
+                      <p>
+                        <strong>Calories</strong>: {{calories}}</p>
+                      <p>
+                        <strong>Protein:</strong> {{protien}}</p>
+                      <p>
+                        <strong>Sugar</strong> {{sugar}}</p>
+                      <p>
+                        <strong>Fat</strong> {{fat}}</p>
+                      <p>
+                        <strong>Carbs</strong> {{carbs}}</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End of Modal --> 
+
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+    
+
 {{/each}}
