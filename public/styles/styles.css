@@ -1,46 +1,55 @@
 * {
-	text-align: center;
+	text-align: left;
 }
 
-ul {
-  list-style: none;
+* {
+  box-sizing: border-box;
 }
 
-li {
-  padding: 20px;
-  margin: 10px;
-  background: lightgrey;
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  float: left;
 }
 
-.list-group-item {
-  line-height: 2.5;
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .label {
   font-weight: bold;
 }
 
-.add-burger {
-  margin-bottom: 5px;
-}
-
-
-.create-update-form {
-  padding: 5px;
-  margin: 5px;
-  background: aqua;
-}
-
-.form-group {
-  margin-bottom: 5px;
-}
-
 body{
-  background: url("../images/background.jpg");
+  background-color: gold;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 14px;
 	line-height: 2;
-	color: #333;
+  color: #333;
+}
+
+.main-section {
+  float: left;
+  width: 100%;
+  padding: 30px;
+  margin: 0 0 40px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.wrapper {
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+  margin: 0 auto -105px;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  clear: both;
 }
 
 .jumbotron {
@@ -50,6 +59,8 @@ body{
 form {
   width:500px;
   margin:50px auto;
+  padding: 5px;
+  margin: 5px;
 }
 .search {
   padding:8px 15px;
