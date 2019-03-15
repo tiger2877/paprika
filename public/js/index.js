@@ -1,6 +1,7 @@
 // Get references to page elements
 var $foodName = $("#food-name");
 var $searchButton = $("#searchButton");
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -95,6 +96,5 @@ var handleDeleteBtnClick = function() {
   API.deleteExample(idToDelete).then(function() {});
 };
 */
-// Add event listeners to the submit and delete buttons
+
 $searchButton.on("click", handleFormSubmit);
-//$exampleList.on("click", ".delete", handleDeleteBtnClick);

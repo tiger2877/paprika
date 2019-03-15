@@ -6,23 +6,23 @@
             <p>
               <strong>Name</strong>: {{name}}</p>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button" id="chartButton" class="btn btn-primary" data-toggle="modal" data-target="#{{foodID}}">
               View
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal fade" id="{{foodID}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Nutrition Information</h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Dietary Information</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                     <!--Display Name, Calories, Protien, Sugar, Fat, Carbs-->
                   <div class="modal-body">
-                      <p>
+                      {{!-- <p>
                         <strong>Calories</strong>: {{calories}}</p>
                       <p>
                         <strong>Protein:</strong> {{protien}}</p>
@@ -31,7 +31,11 @@
                       <p>
                         <strong>Fat</strong> {{fat}}</p>
                       <p>
-                        <strong>Carbs</strong> {{carbs}}</p>
+                        <strong>Carbs</strong> {{carbs}}</p> --}}
+          
+                  <!--Display Chart-->
+                  <canvas id="foodChart"></canvas>
+
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -45,6 +49,34 @@
           </div>
         </div>
       </div>
-    
+<script>  
+$("#chartButton").on("click", drawFoodChart);
+
+var drawFoodChart = function(event) {
+  //draw chart
+  var ctx = $("#foodChart");
+  var chart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ["Calories", "Protein", "Sugar", "Fat", "Carbs"],
+      datasets: [
+        {
+          label: "Dietary Information",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [{{calories}},{{protien}},{{sugar}},{{fat}},{{carbs}}]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: false,
+        text: 'Nutrition and diet data'
+      }
+    }
+  });
+
+}
+</script>  
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 {{/each}}
