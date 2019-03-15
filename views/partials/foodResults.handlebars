@@ -6,12 +6,12 @@
             <p>
               <strong>Name</strong>: {{name}}</p>
             <!-- Button trigger modal -->
-            <button id="viewModal" data-foodID="{{foodID}}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{foodID}}">
               View
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal fade" id="{{foodID}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -23,20 +23,19 @@
                     <!--Display Name, Calories, Protien, Sugar, Fat, Carbs-->
                   <div class="modal-body">
                       <p>
-                        <strong id="calories{{foodID}}" data-calories="{{calories}}" class="{{foodID}}">Calories:</strong></p>
+                        <strong>Calories</strong>: {{calories}}</p>
                       <p>
-                        <strong id="protien{{foodID}}" data-protien="{{protien}}" class="{{foodID}}">Protein:</strong></p>
+                        <strong>Protein:</strong> {{protien}}</p>
                       <p>
-                        <strong id="sugar{{foodID}}" data-sugar="{{sugar}}" class="{{foodID}}">Sugar:</strong></p>
+                        <strong>Sugar</strong> {{sugar}}</p>
                       <p>
-                        <strong id="fat{{foodID}}" data-fat="{{fat}}" class="{{foodID}}">Fat:</strong></p>
+                        <strong>Fat</strong> {{fat}}</p>
                       <p>
-                        <strong id="carbs{{foodID}}" data-carbs="{{carbs}}" class="{{foodID}}">Carbs:</strong></p>
+                        <strong>Carbs</strong> {{carbs}}</p>
                   </div>
                   <div class="modal-footer">
-                    <button id="addToCart" type="button" class="btn btn-primary" data-dismiss="modal">Add To Cart</button>
+                    <button data-foodID="{{foodID}}" type="button" class="addToCart btn btn-primary" data-dismiss="modal">Add To Tracker</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            
                   </div>
                 </div>
               </div>

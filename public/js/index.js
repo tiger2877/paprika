@@ -1,7 +1,9 @@
 // Get references to page elements
 var $foodName = $("#food-name");
 var $searchButton = $("#searchButton");
-var $addToCart = $("#addToCart");
+var $addToCart = $(".addToCart");
+var $trackerButton = $("#trackerButton");
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -85,10 +87,26 @@ var renderRecent = function() {
   });
 };
 
-var handleCartClick = function() {
-  alert("Added to Cart");
+var handleCartClick = function(event) {
+  var foodID = event.currentTarget.dataset.foodid;
+  console.log("foodID: " + foodID);
+  $.post({
+    url: "/api/addTracker",
+    data: { foodID: foodID }
+  }).then(function(trackerResults) {
+    alert("Added to Cart\n" + trackerResults);
+  });
+};
+
+var handleTrackerButtonClick = function() {
+  $.get({
+    url: "/api/getTrackerView"
+  }).then(function(data) {
+    console.log("Update front end modal. \n" + JSON.stringify(data));
+  });
 };
 
 // Add event listeners to the submit and delete buttons
 $searchButton.on("click", handleFormSubmit);
 $addToCart.on("click", handleCartClick);
+$trackerButton.on("click", handleTrackerButtonClick);

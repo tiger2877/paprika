@@ -13,6 +13,44 @@ module.exports = function(app) {
     });
   });
 
+  app.post("/api/addTracker", function(req, res) {
+    console.log(
+      "\n addTracker foodID of button clicked: " + req.body.foodID + "\n"
+    );
+    var foodid = req.body.foodID;
+    db.SearchView.findAll({
+      where: {
+        foodID: foodid
+      }
+    }).then(function(data) {
+      //console.log("addTracker results: " + JSON.stringify(data[0]));
+      var foodID = data[0].foodID;
+      var name = data[0].name;
+      var calories = data[0].calories;
+      var protien = data[0].protien;
+      var sugar = data[0].sugar;
+      var fat = data[0].fat;
+      var carbs = data[0].carbs;
+      db.Tracker.create({
+        foodID: foodID,
+        name: name,
+        calories: calories,
+        protien: protien,
+        sugar: sugar,
+        fat: fat,
+        carbs: carbs
+      }).then(function() {
+        res.send("done");
+      });
+    });
+  });
+
+  app.get("/api/getTrackerView", function(req, res) {
+    db.Tracker.findAll({}).then(function(trackerResults) {
+      res.json(trackerResults);
+    });
+  });
+
   app.post("/api/updateResults", function(req, res) {
     var foodArray = [];
     var foodName = req.body.test;
@@ -98,18 +136,6 @@ module.exports = function(app) {
         });
     });
   });
-
-  // Create a new Recent Search
-  app.post("/api/addRecent", function(req, res) {
-    db.Recent.findAll({}).then(function(foodResults) {
-      res.render("recent", {
-        recent: foodResults
-      });
-      //console.log("---------------------------------------------");
-      //console.log(foodResults);
-    });
-  });
-
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
     // eslint-disable-next-line prettier/prettier
