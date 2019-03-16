@@ -49,3 +49,7 @@ Food Database API Documentation: [developer.edamam.com](https://developer.edamam
 - - -
 
 ### Feature requests:
+* create a chart that will display the dietary information
+* create a new page that will display the results
+* create a shopping cart
+* add recipe page based on the food results that we get
