@@ -125,18 +125,19 @@ module.exports = function(app) {
         .then(function() {
           db.SearchView.bulkCreate(foodArray).then(function() {
             res.send("testing");
-            db.Recent.findAll({}).then(function(recentResults) {
-              // eslint-disable-next-line prettier/prettier
-              for(var i = 0; i < recentResults.length; i++) {
+            db.Recent.findAll({
+              where: {
+                name: foodArray[0].name
+              }
+            }).then(function(found) {
+              //console.log(found.length);
+              if (found.length === 0) {
                 // eslint-disable-next-line prettier/prettier
-                if(foodArray[0] === recentResults[i]) {
-                  return;
-                } else if (foodArray[0] !== recentResults) {
-                  // eslint-disable-next-line prettier/prettier
-                  db.Recent.create(foodArray[0]).then(function() {//Enters the first item into the recent searches table
-                    //console.log("Achieved.");
-                  });
-                }
+                db.Recent.create(foodArray[0]).then(function() {//Enters the first item into the recent searches table
+                  //console.log("Achieved.");
+                });
+              } else {
+                console.log(" ");
               }
             });
           });
@@ -146,6 +147,7 @@ module.exports = function(app) {
         });
     });
   });
+
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
     // eslint-disable-next-line prettier/prettier
