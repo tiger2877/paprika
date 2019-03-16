@@ -4,6 +4,28 @@
       <hr>
       <h2>Search any food you want here</h2>
       <h2>Then find the calories, carbs, protein, fat, and sugar content of your desirable food.</h2>
+      <button id="trackerButton" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#cartModal">View Tracker</button>
+      <!-- Modal -->
+            <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Nutrition Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                    <!--Display Name, Calories, Protien, Sugar, Fat, Carbs-->
+                  <div id="cartModalView" class="modal-body">
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End of Modal --> 
     </div>
     
 <div class="wrapper">

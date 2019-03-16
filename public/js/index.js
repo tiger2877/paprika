@@ -1,6 +1,8 @@
 // Get references to page elements
 var $foodName = $("#food-name");
 var $searchButton = $("#searchButton");
+var $addToCart = $(".addToCart");
+var $trackerButton = $("#trackerButton");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -85,16 +87,42 @@ var renderRecent = function() {
   });
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-/*
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(function() {});
+var handleCartClick = function(event) {
+  var foodID = event.currentTarget.dataset.foodid;
+  console.log("foodID: " + foodID);
+  $.post({
+    url: "/api/addTracker",
+    data: { foodID: foodID }
+  });
 };
-*/
 
+var handleTrackerButtonClick = function() {
+  $("#cartModalView").empty();
+  $.get({
+    url: "/api/getTrackerView"
+  }).then(function(data) {
+    $.each(data, function(index, item) {
+      // eslint-disable-next-line no-console
+      $("#cartModalView").append(
+        "<div>" +
+          "<h3>" +
+          item.name +
+          "</h3>" +
+          "<p>Calories: " +
+          item.calories +
+          ". Protien: " +
+          item.protien +
+          ". Sugar: " +
+          item.sugar +
+          ". Fat: " +
+          item.fat +
+          ". Carbs: " +
+          item.carbs
+      );
+    });
+  });
+};
+// Add event listeners to the submit and delete buttons
 $searchButton.on("click", handleFormSubmit);
+$addToCart.on("click", handleCartClick);
+$trackerButton.on("click", handleTrackerButtonClick);
