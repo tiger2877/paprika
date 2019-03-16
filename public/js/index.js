@@ -122,7 +122,6 @@ var handleTrackerButtonClick = function() {
     });
   });
 };
-
 // Add event listeners to the submit and delete buttons
 $searchButton.on("click", handleFormSubmit);
 $addToCart.on("click", handleCartClick);
