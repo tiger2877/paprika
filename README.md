@@ -16,7 +16,7 @@ Calories counter is a website where users can search various food for the dietar
 * Carbs
 
 Download our slides here:
-![powerpointslides](https://github.com/tiger2877/paprika/blob/master/caloriescounter.pptx)
+[powerpointslides](https://github.com/tiger2877/paprika/blob/master/caloriescounter.pptx)
 - - -
 
 ### Overview
