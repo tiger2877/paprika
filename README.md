@@ -5,7 +5,6 @@
 - Jessen Dasilva: [Jessen's github](https://github.com/jessendasilva1)
 - Jacob Norris: [Jacob's github](https://github.com/Jacob-2k0)
 - Pryambudhi Cahyadi: [Budhi's github](https://github.com/tiger2877)
-![demo2](https://github.com/tiger2877/paprika/blob/master/public/images/demo5.JPG)
 - - -
 
 ### Project Description
