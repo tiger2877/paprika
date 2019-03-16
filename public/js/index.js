@@ -93,16 +93,33 @@ var handleCartClick = function(event) {
   $.post({
     url: "/api/addTracker",
     data: { foodID: foodID }
-  }).then(function(trackerResults) {
-    alert("Added to Cart\n" + trackerResults);
   });
 };
 
 var handleTrackerButtonClick = function() {
+  $("#cartModalView").empty();
   $.get({
     url: "/api/getTrackerView"
   }).then(function(data) {
-    console.log("Update front end modal. \n" + JSON.stringify(data));
+    $.each(data, function(index, item) {
+      // eslint-disable-next-line no-console
+      $("#cartModalView").append(
+        "<div>" +
+          "<h3>" +
+          item.name +
+          "</h3>" +
+          "<p>Calories: " +
+          item.calories +
+          ". Protien: " +
+          item.protien +
+          ". Sugar: " +
+          item.sugar +
+          ". Fat: " +
+          item.fat +
+          ". Carbs: " +
+          item.carbs
+      );
+    });
   });
 };
 
