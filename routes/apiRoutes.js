@@ -125,9 +125,19 @@ module.exports = function(app) {
         .then(function() {
           db.SearchView.bulkCreate(foodArray).then(function() {
             res.send("testing");
-            // eslint-disable-next-line prettier/prettier
-            db.Recent.create(foodArray[0]).then(function() {//Enters the first item into the recent searches table
-              //console.log("Achieved.");
+            db.Recent.findAll({}).then(function(recentResults) {
+              // eslint-disable-next-line prettier/prettier
+              for(var i = 0; i < recentResults.length; i++) {
+                // eslint-disable-next-line prettier/prettier
+                if(foodArray[0] === recentResults[i]) {
+                  return;
+                } else if (foodArray[0] !== recentResults) {
+                  // eslint-disable-next-line prettier/prettier
+                  db.Recent.create(foodArray[0]).then(function() {//Enters the first item into the recent searches table
+                    //console.log("Achieved.");
+                  });
+                }
+              }
             });
           });
         })
