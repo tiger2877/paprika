@@ -50,7 +50,7 @@ module.exports = function(app) {
       res.json(trackerResults);
     });
   });
-
+  
   app.post("/api/updateResults", function(req, res) {
     var foodArray = [];
     var foodName = req.body.test;
