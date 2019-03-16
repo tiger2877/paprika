@@ -28,10 +28,14 @@ From this user input data, users will be able to do the followings:
 - - -
 
 ### Sketch of Final Product: 
+Food Search with a tracker option:
 ![demo1](https://github.com/tiger2877/paprika/blob/master/public/images/demo1.JPG)
+Tracker View (bookmark):
 ![demo2](https://github.com/tiger2877/paprika/blob/master/public/images/demo5.JPG)
-![demo3](https://github.com/tiger2877/paprika/blob/master/public/images/demo4.jpg)
+Recent Searches:
 ![demo4](https://github.com/tiger2877/paprika/blob/master/public/images/demo3.JPG)
+Chart JS (not implemented in our project):
+![demo3](https://github.com/tiger2877/paprika/blob/master/public/images/demo4.jpg)
 - - -
 
 ### APIs to be Used:
