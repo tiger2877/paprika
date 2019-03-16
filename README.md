@@ -29,7 +29,7 @@ From this user input data, users will be able to do the followings:
 
 ### Sketch of Final Product: 
 ![demo1](https://github.com/tiger2877/paprika/blob/master/public/images/demo1.JPG)
-![demo2](https://github.com/tiger2877/paprika/blob/master/public/images/demo4.JPG)
+![demo2](https://github.com/tiger2877/paprika/blob/master/public/images/demo4.jpg)
 ![demo3](https://github.com/tiger2877/paprika/blob/master/public/images/demo3.JPG)
 - - -
 
