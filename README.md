@@ -9,7 +9,7 @@
 - - -
 
 ### Project Description
-Calories counter is a website where users can search various food for the nutrition information: 
+Calories counter is a website where users can search various food for the dietary information: 
 * Calories
 * Protien
 * Sugar
