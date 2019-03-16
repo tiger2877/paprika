@@ -35,6 +35,7 @@ From this user input data, users will be able to do the followings:
 ![demo2](https://github.com/tiger2877/paprika/blob/master/public/images/demo5.JPG)
 ---
 `Recent Searches:`
+
 ![demo4](https://github.com/tiger2877/paprika/blob/master/public/images/demo3.JPG)
 ---
 `Chart JS (not implemented in our project):`
