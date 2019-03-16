@@ -24,7 +24,7 @@ From this user input data, users will be able to do the followings:
 * search various food items like almond
 * see various processed food that contains almond
 * see a chart of these food items in terms of calories, protein, sugar, fat, and carbs
-
+* add a food item to the tracker as a bookmark
 - - -
 
 ### Sketch of Final Product: 
