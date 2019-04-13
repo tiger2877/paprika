@@ -1,7 +1,7 @@
 # Group Paprika ![paprika](https://tse3.mm.bing.net/th?id=OIP.05wWJaolx2HaQp6woQTGMgHaKA&pid=Api&P=0&w=50&h=50)
 * Project Title: Calories Counter
 
-See our live project here: [demo](https://frozen-sea-48346.herokuapp.com/)
+See our live project here: [caloriescounter](https://frozen-sea-48346.herokuapp.com/)
 
 ### Team Members:
 - Jessen Dasilva: [Jessen's github](https://github.com/jessendasilva1)
